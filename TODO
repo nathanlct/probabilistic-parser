@@ -1,0 +1,3 @@
+- Encapsulate grammar, OOV module and CYK algorithm into classes as in old_system
+- Finish old system grammar (missing: un-chomskyzation of UNIT rules, although it doesn't decrease accuracy that much)
+- Improve OOV module (language model, average spelling distance and embeddings distance..)

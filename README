@@ -1,0 +1,25 @@
+run.sh does not take any arguments
+(main.py takes SEQUOIA test sentences from stdin and outputs parsed results on stdout)
+
+Usage: ./run.sh < evaluation_data.parser_input > evaluation_data.parser_output
+
+Then for evaluation, run: python eval.py 
+
+Requirements: nltk (for parsing), PYEVALB (for evaluation)
+
+The code assumes that the two following files are in the same folder as main.py:
+polyglot-fr.pkl
+sequoia-corpus+fct.mrg_strict.txt
+
+The beam size used by the CYK algorithm can be changed at the start of main.py
+
+------
+
+Train data: first 80% of SEQUOIA corpus (around 2500 sentences)
+Test data: last 10% of SEQUOIA corpus (around 300 sentences)
+
+Some results on test data:
+
+Beam size=10: mean accuracy=0.919 out of 149/311 parsed sentences (execution time=25min)
+Beam size=20: mean accuracy=0.926 out of 178/311 parsed sentences (execution time=28min)
+Beam size=50: mean accuracy=0.924 out of 191/311 parsed sentences (execution time=36min)
